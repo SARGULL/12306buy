@@ -1,18 +1,27 @@
 # 12306buy
 12306buy chrome extension plugin
 
-# step
+## step
 
-![setp1](https://github.com/ouqinglai/12306buy/blob/master/screenshot/dama.png)
+### login dama
+![login dama](https://github.com/ouqinglai/12306buy/blob/master/screenshot/dama.png)
 
-![](https://github.com/ouqinglai/12306buy/blob/master/screenshot/login.png)
+### login 12306
+![login 12306](https://github.com/ouqinglai/12306buy/blob/master/screenshot/login.png)
 
-![](https://github.com/ouqinglai/12306buy/blob/master/screenshot/main.png)
+### write passenger information
+![main screen](https://github.com/ouqinglai/12306buy/blob/master/screenshot/main.png)
 
-![](https://github.com/ouqinglai/12306buy/blob/master/screenshot/hasTicket.png)
+## chrome.notifications
 
-![](https://github.com/ouqinglai/12306buy/blob/master/screenshot/tip.png)
+### when has ticket
+![when has ticket](https://github.com/ouqinglai/12306buy/blob/master/screenshot/hasTicket.png)
 
-![](https://github.com/ouqinglai/12306buy/blob/master/screenshot/waitCode.png)
+### tip box
+![tip box](https://github.com/ouqinglai/12306buy/blob/master/screenshot/tip.png)
 
-![](https://github.com/ouqinglai/12306buy/blob/master/screenshot/success.png)
+### waiting for dama code
+![waiting for dama code](https://github.com/ouqinglai/12306buy/blob/master/screenshot/waitCode.png)
+
+### success!!
+![addOrder success](https://github.com/ouqinglai/12306buy/blob/master/screenshot/success.png)
