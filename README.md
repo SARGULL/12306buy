@@ -2,8 +2,8 @@
 12306buy chrome extension plugin
 
 # step
-setp1
-![](https://github.com/ouqinglai/12306buy/blob/master/screenshot/dama.png)
+
+![setp1](https://github.com/ouqinglai/12306buy/blob/master/screenshot/dama.png)
 
 ![](https://github.com/ouqinglai/12306buy/blob/master/screenshot/login.png)
 
