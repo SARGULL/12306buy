@@ -1,5 +1,6 @@
 # 12306buy
 12306buy chrome extension plugin
+* **browser :** use Since Chrome 50.
 
 ## step
 
