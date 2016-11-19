@@ -1,10 +1,11 @@
 # 12306buy
 12306buy chrome extension plugin
 * **browser :** use Since Chrome 50.
+* **register :** 注册[云打码](http://yundama.com/)账号，用于通过验证码验证.
 
 ## step
 
-### login dama
+### login dama(云打码)
 ![login dama](https://github.com/ouqinglai/12306buy/blob/master/screenshot/dama.png)
 
 ### login 12306
@@ -13,7 +14,7 @@
 ### write passenger information
 ![main screen](https://github.com/ouqinglai/12306buy/blob/master/screenshot/main.png)
 
-## chrome.notifications
+## chrome.notifications(桌面通知)
 
 ### when has ticket
 ![when has ticket](https://github.com/ouqinglai/12306buy/blob/master/screenshot/hasTicket.png)
