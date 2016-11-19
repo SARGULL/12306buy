@@ -1,7 +1,8 @@
 # 12306buy
-12306buy chrome extension plugin
-* **browser :** use Since Chrome 50.
-* **register :** 注册[云打码](http://yundama.com/)账号，用于通过验证码验证.
+12306buy chrome extension plugin 浏览器插件
+一键下单，自动通过验证码，带循环查票功能。后台运行，桌面通知
+* **browser :** use Since Chrome 50，尽量使用最新谷歌浏览器.
+* **register :** 注册[云打码](http://yundama.com/)账号，用于验证码打码.
 
 ## step
 

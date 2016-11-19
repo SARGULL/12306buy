@@ -134,7 +134,7 @@
 		<div>目的地：<input type="text" name="to" placeholder="北京西" required value="珠海"></div>
 		<div>出发日期：<input type="date" name="to_date" placeholder="2016-11-15" required></div>
 		<div>坐车时间：<input type="time" name="time" placeholder="16:00" required></div>
-		<div class="no-required">时间区间：<input type="text" name="time_range" placeholder="[-1,1]表示允许15:00~17:00之间最快班次，-0.5为15:30"></div>
+		<!-- <div class="no-required">时间区间：<input type="text" name="time_range" placeholder="[-1,1]表示允许15:00~17:00之间最快班次，-0.5为15:30"></div> -->
 		<h3>模式</h3>
 		<div class="no-required">下单：<input type="radio" name="mode" value="buy" checked="checked"></div>
 		<div class="no-required">
@@ -147,7 +147,8 @@
 			1、下单模式：<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例如坐车时间：16:00&nbsp;&nbsp;&nbsp;&nbsp;座位类型：二等座&nbsp;&nbsp;&nbsp;&nbsp;无票时，如果下一班16:29二等座有票，则自动提交订单<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果下一班16:31二等座有票时，则弹框询问，不超过30分钟内的班次自动提交<br>
-			2、可选无座模式：首选二等座，次选无座
+			2、询票模式：每隔多少秒在后台查询有无票，当有票时桌面通知<br>
+			3、可选无座模式：首选二等座，次选无座
 		</span>
 		<input type="submit" value="提交">
 	</form>

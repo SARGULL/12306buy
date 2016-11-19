@@ -86,10 +86,10 @@ chrome.notifications.onClosed.addListener((id , byUser) => {
 })
 
 //1、登录验证
-function start (){ dataUrl(val => sendBlobAjax(dataURLtoBlob(val))) }
+function start (isReLogin/*bool用于重新登录*/){ dataUrl(val => sendBlobAjax(dataURLtoBlob(val) , isReLogin)) }
 
 //2、验证成功后，登录
-function login (userLogin){
+function login (userLogin , cb){
 	Fetch(_ctx + 'login/loginAysnSuggest' , {
 		'loginUserDTO.user_name' : userLogin.user,
 		'userDTO.password' : userLogin.pwd,
@@ -97,6 +97,7 @@ function login (userLogin){
 	} , data => {
 		sendMsg(['loginCb'])
 		sendMsg(['msgCb' , '登录成功！' , 'login' , false])
+		cb && cb()
 	})
 }
 
@@ -173,7 +174,7 @@ function buy (){
 }
 
 //验证图片结果是否正确
-function checkCode (position){
+function checkCode (position , isReLogin){
 	for(var i = 0 ; i < position.length ; i++) {
 		let p = _array[position[i] - 1]
 		_randCode += (p[0] + 3) + ',' + (p[1] - 16) + ','
@@ -189,7 +190,7 @@ function checkCode (position){
 			sendMsg(['msgCb' , _module.module + 'ing' , 'checkCode'])
 
 			setTimeout(() => {
-				if(_module.module === 'login') login()
+				if(_module.module === 'login') login(isReLogin ? orderTicket : '')
 				else ckeckOrderInfo()
 			} , 500)
 		}
@@ -218,7 +219,7 @@ function dataUrl (cb){
 }
 
 //获取验证码结果
-function sendBlobAjax (blob){
+function sendBlobAjax (blob , isReLogin){
     var fd = new FormData()
     ,	count = 1
 
@@ -240,7 +241,7 @@ function sendBlobAjax (blob){
 		sendMsg(['msgCb' , '打码：' + count++ + '次' , '获取验证码结果'])
 
 		if(data['text']){
-        	checkCode(data['text'])
+        	checkCode(data['text'] , isReLogin)
         }else {
         	_cid = data.cid
             getResult()
@@ -309,13 +310,21 @@ function Fetch (url , data , cb , headers , resType){
 		.then(res => res[resType ? 'text' : 'json']())
 		.then(res => {
 			if(res.data && res.data.errMsg) {
-				sendMsg(['msgCb' , res.data.errMsg , url])
-				sendMsg(['errorCb'])
+				error(res.data.errMsg)
 			}else if(res.messages && res.messages.length !== 0) {
-				sendMsg(['msgCb' , JSON.stringify(res.messages) , url])
-				sendMsg(['errorCb'])
+				error(JSON.stringify(res.messages))
+				if(res.messages.indexOf('用户未登录') !== -1) {
+					_module = { module : 'login' , rand : 'sjrand' }
+					start(true/*需要重新登录*/)
+				}
 			}else if(cb) cb(res)
 		})
+	}
+
+	function error (msg){
+		_noShowMsgBox = false
+		sendMsg(['msgCb' , msg , url])
+		sendMsg(['errorCb'])
 	}
 }
 
